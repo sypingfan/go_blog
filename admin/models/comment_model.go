@@ -14,5 +14,5 @@ type CommentModel struct {
 	ArticleID    uint         `json:"article_id"`                            //文章id
 	//NickName     string       `gorm:"size:42" json:"nick_name"`              //用户的昵称
 	//Avatar       string       `json:"avatar"`
-	UserID uint `gorm:"size:10" json:"user_id"` //评论的用户
+	UserID uint `json:"user_id"` //评论的用户
 }
