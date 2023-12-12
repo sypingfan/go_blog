@@ -2,6 +2,7 @@ package models
 
 import "admin/models/ctype"
 
+// ArticleModel 文章表
 type ArticleModel struct {
 	MODEL
 	Title         string         `gorm:"size:32" json:"title"`                           //文章标题

@@ -1,6 +1,6 @@
 package models
 
-// MessageModel 记录消息
+// MessageModel  消息表 记录消息
 type MessageModel struct {
 	MODEL
 	SendUserID       uint      `gorm:"primaryKey" json:"send_user_id"` //发送人id

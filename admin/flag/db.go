@@ -3,7 +3,7 @@
 * User: 平凡
 * Date: 2023/12/12
 * Time: 22:00
-* Remark: 执行db命令 迁移表结构
+* Remark: 表结构迁移,执行命令：go run main.go -db
  */
 package flag
 

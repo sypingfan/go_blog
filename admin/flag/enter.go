@@ -3,7 +3,7 @@
 * User: 平凡
 * Date: 2023/12/12
 * Time: 22:00
-* Remark: 命令行迁移表结构
+* Remark: 绑定命令行参数
  */
 package flag
 
