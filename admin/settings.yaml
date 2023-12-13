@@ -1,6 +1,7 @@
 mysql:
   host: 127.0.0.1
   port: 3306
+  config: ""
   db: blog
   user: root
   password: qwe2476979217
@@ -12,9 +13,8 @@ logger:
   show_line: true
   log_in_console: true
 system:
-  host: "0.0.0.0"
+  host: 0.0.0.0
   port: 8080
-#  env: dev
   env: release
 site_info:
   created_at: "2023-02-12"
