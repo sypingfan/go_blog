@@ -26,33 +26,33 @@ site_info:
   wechat_image: http://www.baidu.com
   name: 枫枫知道
   job: 后端开发
-  addr: 湖南长沙
+  addr: 湖南长沙111
   slogan: 峰峰博客
   slogan_en: MEILINGBLOG
   web: http://www.mypingfan.top/
   bilibili_url: https://space.bilibili.com
   gitee_url: https://gitee.com/
   github_url: https://github.com/
-jut:
-  secret: xxx
-  expires: 48
-  issuer: xx
 qq:
-  app-id: "xx"
+  app_id: ""
   key: xx
-  rediect: http://xx.xx.com/login?flag=qq
+  redirect: ""
+qiniu:
+  access_key: ""
+  secret_key: ""
+  bucket: ""
+  cdn: ""
+  zone: ""
+  size: 0
 email:
-  host: smtp.qq.com
-  port: 465
-  user: xx@qq.com
-  password: xx
-  default_from_email: 疯疯知道
-  use_ssl: xx
-  user_tls: xx
-qi_niu:
-  access_key: UMM-xx-FdrIF-xx
-  secret_key: xx
-  bucket: ffzhidao
-  cdn: xx://xx.xx.com
-  zone: xx
-  size: 5
+  host: ""
+  port: 0
+  user: ""
+  password: ""
+  default_from_email: ""
+  use_ssl: false
+  user_tls: false
+jwt:
+  secret: ""
+  expires: 0
+  issuer: ""
