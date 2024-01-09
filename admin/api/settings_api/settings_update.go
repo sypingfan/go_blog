@@ -15,8 +15,8 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-// SettingInfoUpdateView 修改某一项的配置信息
-func (SettingsApi) SettingInfoUpdateView(c *gin.Context) {
+// SettingsInfoUpdateView 修改某一项的配置信息
+func (SettingsApi) SettingsInfoUpdateView(c *gin.Context) {
 	var cr SettingUri
 	err := c.ShouldBindUri(&cr)
 	if err != nil {
