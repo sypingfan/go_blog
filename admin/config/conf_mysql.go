@@ -1,6 +1,9 @@
 package config
 
-import "strconv"
+import (
+	"fmt"
+	"strconv"
+)
 
 type Mysql struct {
 	Host     string `yaml:"host"`
@@ -13,5 +16,6 @@ type Mysql struct {
 }
 
 func (m Mysql) Dns() string {
+	fmt.Println(m.User + ":" + m.Password + "@tcp(" + m.Host + ":" + strconv.Itoa(m.Port) + ")/" + m.Db + "?" + m.Config)
 	return m.User + ":" + m.Password + "@tcp(" + m.Host + ":" + strconv.Itoa(m.Port) + ")/" + m.Db + "?" + m.Config
 }
