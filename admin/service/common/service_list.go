@@ -18,11 +18,14 @@ type Option struct {
 	Debug bool
 }
 
-// 分页
+// ComList 分页
 func ComList[T any](model T, option Option) (list []T, count int64, err error) {
 	DB := global.DB
 	if option.Debug {
 		DB = global.DB.Session(&gorm.Session{Logger: global.MysqlLog})
+	}
+	if option.Sort == "" {
+		option.Sort = "create_at desc" // 默认按照时间往前排
 	}
 
 	count = DB.Select("id").Find(&list).RowsAffected
@@ -31,7 +34,7 @@ func ComList[T any](model T, option Option) (list []T, count int64, err error) {
 	if offset < 0 {
 		offset = 0
 	}
-	err = DB.Limit(option.Limit).Offset(offset).Find(&list).Error
+	err = DB.Limit(option.Limit).Offset(offset).Order(option.Sort).Find(&list).Error
 
 	return list, count, err
 
