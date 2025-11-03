@@ -10,7 +10,9 @@ package images_api
 import (
 	"admin/global"
 	"admin/models"
+	"admin/models/ctype"
 	"admin/models/res"
+	"admin/plugins/qiniu"
 	"admin/utils"
 	"fmt"
 	"github.com/gin-gonic/gin"
@@ -115,6 +117,25 @@ func (ImagesApi) ImageUploadView(c *gin.Context) {
 			})
 			continue
 		}
+		if global.Config.QiNiu.Enable {
+			filePath, err = qiniu.UploadImage(byteData, fileName, "gvb")
+			if err != nil {
+				global.Log.Error(err)
+				continue
+			}
+			resList = append(resList, FileUploadResponse{
+				FileName:  filePath,
+				IsSuccess: true,
+				Msg:       "上传七牛云成功",
+			})
+			global.DB.Create(&models.BannerModel{
+				Path:      filePath,
+				Hash:      imageHash,
+				Name:      fileName,
+				ImageType: ctype.Qiniu,
+			})
+			continue
+		}
 		err = c.SaveUploadedFile(file, filePath)
 		if err != nil {
 			global.Log.Error(err)
@@ -132,9 +153,10 @@ func (ImagesApi) ImageUploadView(c *gin.Context) {
 		})
 		// 图片入库
 		global.DB.Create(&models.BannerModel{
-			Path: filePath,
-			Hash: imageHash,
-			Name: fileName,
+			Path:      filePath,
+			Hash:      imageHash,
+			Name:      fileName,
+			ImageType: ctype.Local,
 		})
 	}
 	res.OkWithData(resList, c)

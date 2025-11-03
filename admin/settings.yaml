@@ -41,13 +41,13 @@ qq:
   key: xx
   redirect: ""
 qiniu:
-  enable: false
-  access_key: ""
-  secret_key: ""
-  bucket: ""
-  cdn: ""
-  zone: ""
-  size: 0
+  enable: true
+  access_key: "dyFCnM5AqXdQfa2GnS5de5OAeIG2E7m3a90_XO0C"
+  secret_key: "kW-7EH4P4tbzdiGbetdOyifr0w2bs5ETB_HQTiFV"
+  bucket: "kodomp3"
+  cdn: "http://qiniu.mypingfan.top/"
+  zone: "z2"
+  size: 5
 email:
   host: ""
   port: 0
