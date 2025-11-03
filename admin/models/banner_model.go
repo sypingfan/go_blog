@@ -15,7 +15,7 @@ type BannerModel struct {
 	ImageType ctype.ImageType `gorm:"default:1" json:"image_type"` // 图片的类型，1：本地，2：七牛云
 }
 
-func (b *BannerModel) BeforDelete(tx *gorm.DB) (err error) {
+func (b *BannerModel) BeforeDelete(tx *gorm.DB) (err error) {
 	if b.ImageType == ctype.Local {
 		// 本地图片，删除，还要删除本地的存储
 		err = os.Remove(b.Path)

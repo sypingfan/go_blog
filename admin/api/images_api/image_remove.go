@@ -24,7 +24,8 @@ func (ImagesApi) ImageRemoveView(c *gin.Context) {
 	}
 
 	var imageList []models.BannerModel
-	count := global.DB.Find(&imageList, cr.IDlist).RowsAffected
+
+	count := global.DB.Find(&imageList, cr.IDList).RowsAffected
 	if count == 0 {
 		res.FailWithMessage("文件不存在", c)
 		return

@@ -9,7 +9,7 @@ type MODEL struct {
 }
 
 type RemoveRequest struct {
-	IDlist []uint `json:"id_dlist"`
+	IDList []uint `json:"id_list"`
 }
 
 type PageInfo struct {
