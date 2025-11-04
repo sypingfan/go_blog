@@ -47,6 +47,7 @@ qiniu:
   bucket: "kodomp3"
   cdn: "http://qiniu.mypingfan.top/"
   zone: "z2"
+  prefix: "gvb"
   size: 5
 email:
   host: ""

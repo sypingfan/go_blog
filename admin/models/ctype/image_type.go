@@ -3,7 +3,7 @@
 * User: 平凡
 * Date: 2024/5/22
 * Time: 21:43
-* Remark: 图片厂商
+* Remark: 图片类型转换
  */
 package ctype
 
@@ -16,8 +16,8 @@ const (
 	Qiniu ImageType = 2 // 七牛云
 )
 
-func (s ImageType) MarshalJson() ([]byte, error) {
-	return json.Marshal(s.String)
+func (s ImageType) MarshalJSON() ([]byte, error) {
+	return json.Marshal(s.String())
 }
 
 func (s ImageType) String() string {
